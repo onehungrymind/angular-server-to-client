@@ -5,7 +5,6 @@ A REST-ful master-detail application built using Angular via the [angular-cli](h
 ## Dependencies
 - You need `node v >= 7.3` and `npm v >= 3` installed. We recommend using [nvm](https://github.com/creationix/nvm#installation) or [nvm-windows](https://github.com/coreybutler/nvm-windows#installation--upgrades)
 - Install Angular CLI via `npm i -g @angular/cli@latest`
->>>>>>> 4201a59... Update README.md
 
 ### Getting Started
 There are two main parts to this application. The first is the REST API, for which we are using `json-server`. The second part is the Angular application server which we will start using `ng serve`. We have bundled both of these commands into an NPM script called `start`. 
