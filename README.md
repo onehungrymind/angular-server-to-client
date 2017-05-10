@@ -1,19 +1,19 @@
-# ng2-rest-app
+# Moving from Server-side to Client-side with Angular
 
-A REST-ful master-detail application built using Angular 2 and angular-cli.
+A REST-ful master-detail application built using Angular via the [angular-cli](https://github.com/angular/angular-cli).
 
 ## Dependencies
-- You must have `node v >= 4.0` and `npm v >= 3` installed (via `brew install node` or [NodeJS.org](https://nodejs.org/en/));
+- You need `node v >= 7.3` and `npm v >= 3` installed. We recommend using [nvm](https://github.com/creationix/nvm#installation) or [nvm-windows](https://github.com/coreybutler/nvm-windows#installation--upgrades)
+- Install Angular CLI via `npm i -g @angular/cli@latest`
 
 ### Getting Started
+There are two main parts to this application. The first is the REST API, for which we are using `json-server`. The second part is the Angular application server which we will start using `ng serve`. We have bundled both of these commands into an NPM script called `start`. 
 
-There are two main parts to this application. The first is the REST API, for which we are using `json-server`. The second part is the Angular 2 application server which we will start using `ng serve`.  
-
-To get started run the commands below.
+To get started run the following commands:
 
 ```bash
-$ git clone https://github.com/onehungrymind/ng2-rest-app.git
-$ cd ng2-rest-app
+$ git clone https://github.com/onehungrymind/angular-server-to-client.git
+$ cd angular-server-to-client
 $ npm install
 $ npm start
 ```
