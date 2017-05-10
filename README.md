@@ -3,7 +3,6 @@
 A REST-ful master-detail application built using Angular via the [angular-cli](https://github.com/angular/angular-cli).
 
 ## Dependencies
-<<<<<<< HEAD
 - You need `node v >= 7.3` and `npm v >= 3` installed. We recommend using [nvm](https://github.com/creationix/nvm#installation) or [nvm-windows](https://github.com/coreybutler/nvm-windows#installation--upgrades)
 - Install Angular CLI via `npm i -g @angular/cli@latest`
 
