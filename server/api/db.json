@@ -2,47 +2,41 @@
   "items": [
     {
       "id": 1,
-      "img": "number-1.png",
+      "img": "one.png",
       "name": "Item 1",
-      "description": "This is a description",
-      "featured": false
+      "description": "This is a description"
     },
     {
       "id": 2,
-      "img": "number-2-blue-icon.png",
+      "img": "two.png",
       "name": "Item 2",
-      "description": "This is a description!",
-      "featured": false
+      "description": "This is a description!"
     },
     {
       "id": 3,
-      "img": "number-3-icon.png",
+      "img": "three.png",
       "name": "Item 3",
-      "description": "This is a lovely item",
-      "featured": true
+      "description": "This is a lovely item"
     }
   ],
   "widgets": [
     {
       "id": 1,
-      "img": "number-1.png",
+      "img": "one.png",
       "name": "Widget 1",
-      "description": "This is a description",
-      "featured": false
+      "description": "This is a description"
     },
     {
       "id": 2,
-      "img": "number-2-blue-icon.png",
+      "img": "two.png",
       "name": "Widget 2",
-      "description": "This is a description!",
-      "featured": false
+      "description": "This is a description!"
     },
     {
       "id": 3,
-      "img": "number-3-icon.png",
+      "img": "three.png",
       "name": "Widget 3",
-      "description": "This is a lovely widget",
-      "featured": true
+      "description": "This is a lovely widget"
     }
   ]
 }
