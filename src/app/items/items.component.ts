@@ -7,7 +7,7 @@ import { ItemsService, Item } from '../shared';
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent implements OnInit {
-  items: Array<Item>;
+  items: Item[];
   selectedItem: Item;
 
   constructor(
