@@ -2,10 +2,8 @@ import { Http, Headers } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Item } from './item.model';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/toPromise';
 
 const BASE_URL = 'http://localhost:3000/items/';
-const IMG_URL = 'assets/img/';
 const HEADER = { headers: new Headers({ 'Content-Type': 'application/json' }) };
 
 @Injectable()
