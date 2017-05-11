@@ -10,5 +10,4 @@ export class WidgetsListComponent {
   @Input() widgets: Widget[];
   @Output() selected = new EventEmitter();
   @Output() deleted = new EventEmitter();
-  @Output() featured = new EventEmitter();
 }

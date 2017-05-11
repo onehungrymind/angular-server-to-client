@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Widget } from '../../shared';
 
 @Component({
@@ -8,4 +8,6 @@ import { Widget } from '../../shared';
 })
 export class WidgetDetailComponent {
   @Input() widget: Widget;
+  @Output() saved = new EventEmitter();
+  @Output() cancelled = new EventEmitter();
 }
