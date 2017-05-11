@@ -7,7 +7,7 @@ import { Widget, widgets } from '../shared';
   styleUrls: ['./widgets.component.css']
 })
 export class WidgetsComponent {
-  widgets: Array<Widget> = widgets;
+  widgets: Widget[] = widgets;
 
   constructor() {}
 }
