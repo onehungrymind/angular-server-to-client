@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemsService, Item } from '../shared';
-import { Router, ActivatedRoute } from '@angular/router';
-// import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-items',
@@ -13,37 +11,15 @@ export class ItemsComponent implements OnInit {
   selectedItem: Item;
 
   constructor(
-    private itemsService: ItemsService,
-    private router: Router,
-    private route: ActivatedRoute
+    private itemsService: ItemsService
   ) {}
 
   ngOnInit() {
-    this.itemsService.loadItems()
-      .subscribe(items => {
-        this.items = items;
-        if (this.route.snapshot.firstChild) {
-          this.diffFeaturedItems(items);
-        }
-      });
-  }
-
-  // diffFeaturedItems handles the case where one item is set as featured-item in the database,
-  // but the user browses to another featured-item item manually using the URL bar
-  diffFeaturedItems(items: Item[]) {
-    const supposedlyFeaturedID = this.route.snapshot.firstChild.params['id'];
-
-    if (supposedlyFeaturedID) {
-      let supposedlyFeaturedItem = items.find(item => item.id === +supposedlyFeaturedID);
-
-      if (!supposedlyFeaturedItem.featured) {
-        this.setItemAsFeatured(supposedlyFeaturedItem);
-      }
-    }
+    this.getItems();
   }
 
   resetItem() {
-    let emptyItem: Item = {id: null, name: '', description: ''};
+    const emptyItem: Item = {id: null, name: '', description: ''};
     this.selectedItem = emptyItem;
   }
 
@@ -51,57 +27,25 @@ export class ItemsComponent implements OnInit {
     this.selectedItem = item;
   }
 
+  getItems() {
+    this.itemsService.loadItems()
+      .subscribe(items => this.items = items);
+  }
+
   saveItem(item: Item) {
     this.itemsService.saveItem(item)
-      .subscribe(responseItem => {
-        if (item.id) {
-          this.replaceItem(responseItem);
-        } else {
-          this.pushItem(responseItem);
-        }
+      .subscribe(response => {
+        this.getItems();
+        this.resetItem();
       });
-
-    // Generally, we would want to wait for the result of `itemsService.saveItem`
-    // before resetting the current item.
-    this.resetItem();
-  }
-
-  replaceItem(item: Item) {
-    this.items = this.items.map(mapItem => {
-      return mapItem.id === item.id ? item : mapItem;
-    });
-  }
-
-  pushItem(item: Item) {
-    this.items.push(item);
   }
 
   deleteItem(item: Item) {
     this.itemsService.deleteItem(item)
-      .subscribe(() => {
-        this.items.splice(this.items.indexOf(item), 1);
+      .subscribe(response => {
+        this.getItems();
+        this.resetItem();
       });
-
-    // Generally, we would want to wait for the result of `itemsService.deleteItem`
-    // before resetting the current item.
-    this.resetItem();
   }
-
-  unsetFeaturedItem() {
-    const featured = this.items.find(item => item.featured);
-
-    if (featured) {
-      this.saveItem(Object.assign({}, featured, {featured: false}));
-    }
-  }
-
-  setItemAsFeatured(item: Item) {
-    this.unsetFeaturedItem();
-
-    this.saveItem(Object.assign({}, item, {featured: true}));
-
-    this.router.navigate(['featured', item.id], {relativeTo: this.route});
-  }
-
 }
 
