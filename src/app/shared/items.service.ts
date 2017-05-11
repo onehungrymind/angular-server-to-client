@@ -14,8 +14,7 @@ export class ItemsService {
 
   loadItems() {
     return this.http.get(BASE_URL)
-      .map(res => res.json())
-      .map(items => items.map(item => Object.assign({}, item, {img: `${IMG_URL}${item.img}`})));
+      .map(res => res.json());
   }
 
   loadItem(id) {
@@ -33,11 +32,8 @@ export class ItemsService {
   }
 
   updateItem(item: Item) {
-    delete item.img;
-
     return this.http.patch(`${BASE_URL}${item.id}`, JSON.stringify(item), HEADER)
-      .map(res => res.json())
-      .map(i => Object.assign({}, i, {img: `${IMG_URL}${i.img}`}));
+      .map(res => res.json());
   }
 
   deleteItem(item: Item) {
