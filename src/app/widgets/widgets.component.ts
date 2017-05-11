@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Widget, widgets } from '../shared';
 
 @Component({
@@ -6,26 +6,22 @@ import { Widget, widgets } from '../shared';
   templateUrl: './widgets.component.html',
   styleUrls: ['./widgets.component.css']
 })
-export class WidgetsComponent {
+export class WidgetsComponent implements OnInit{
   widgets: Array<Widget> = widgets;
   selectedWidget: Widget;
 
   constructor() {}
 
+  ngOnInit() {
+    this.resetWidget();
+  }
+
   resetWidget() {
-    let emptyWidget: Widget = {id: null, name: '', description: ''};
+    const emptyWidget: Widget = {id: null, name: '', description: ''};
     this.selectedWidget = emptyWidget;
   }
 
   selectWidget(widget: Widget) {
     this.selectedWidget = widget;
   }
-
-  deleteWidget(widget: Widget) {
-    this.widgets.splice(this.widgets.indexOf(widget), 1);
-
-    this.resetWidget();
-  }
-
 }
-
