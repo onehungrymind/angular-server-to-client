@@ -23,9 +23,9 @@
     </form>
   </div>
   <div class="mdl-card__actions">
-    <button type="submit" (click)="cancelled.emit(selectedWidget)"
+    <button type="button" (click)="cancelled.emit(selectedWidget)"
       class="mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</button>
-    <button type="submit" [disabled]="!formRef.valid" (click)="saved.emit(selectedWidget)"
+    <button type="button" [disabled]="!formRef.valid" (click)="saved.emit(selectedWidget)"
       class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect">Save</button>
   </div>
 </div>
