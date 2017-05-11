@@ -7,7 +7,7 @@ import { WidgetsService, Widget } from '../shared';
   styleUrls: ['./widgets.component.css']
 })
 export class WidgetsComponent implements OnInit {
-  widgets: Array<Widget>;
+  widgets: Widget[];
   selectedWidget: Widget;
 
   constructor(
