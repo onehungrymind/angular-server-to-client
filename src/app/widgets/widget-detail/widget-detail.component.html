@@ -7,9 +7,9 @@
     <h6>{{widget?.description}}</h6>
   </div>
   <div class="mdl-card__actions">
-    <button type="submit" (click)="cancelled.emit(widget)"
+    <button type="button" (click)="cancelled.emit(widget)"
       class="mdl-button mdl-js-button mdl-js-ripple-effect">Cancel</button>
-    <button type="submit" (click)="saved.emit(widget)"
+    <button type="button" (click)="saved.emit(widget)"
       class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect">Save</button>
   </div>
 </div>
