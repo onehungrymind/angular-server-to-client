@@ -46,6 +46,6 @@ export class WidgetsComponent implements OnInit{
 
   getWidgets() {
     this.widgetsService.loadWidgets()
-      .subscribe(widgets => this.widgets = widgets);
+      .subscribe((widgets: Widget[]) => this.widgets = widgets);
   }
 }
