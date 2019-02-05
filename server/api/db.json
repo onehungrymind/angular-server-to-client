@@ -16,7 +16,7 @@
       "id": 3,
       "img": "three.png",
       "name": "Item 3",
-      "description": "This is a lovely"
+      "description": "This is a lovely item"
     }
   ],
   "widgets": [
@@ -31,6 +31,12 @@
       "img": "two.png",
       "name": "Widget 2",
       "description": "This is a description!"
+    },
+    {
+      "id": 3,
+      "img": "three.png",
+      "name": "Widget 3",
+      "description": "This is a lovely widget"
     }
   ]
 }
