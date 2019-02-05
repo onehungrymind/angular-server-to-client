@@ -29,7 +29,7 @@ export class ItemsComponent implements OnInit {
 
   getItems() {
     this.itemsService.loadItems()
-      .subscribe(items => this.items = items);
+      .subscribe((items: Item[]) => this.items = items);
   }
 
   saveItem(item: Item) {
