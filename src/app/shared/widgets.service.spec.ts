@@ -1,18 +1,18 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, inject } from '@angular/core/testing';
-import { Http } from '@angular/http';
 
 import { WidgetsService } from './widgets.service';
+import { HttpClient } from '@angular/common/http';
 
-class HttpStub {}
+class HttpClientStub {}
 
 describe('Service: Items', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
         WidgetsService,
-        {provide: Http, useClass: HttpStub}
+        {provide: HttpClient, useClass: HttpClientStub}
       ]
     });
   });
